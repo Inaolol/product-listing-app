@@ -1,0 +1,29 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: #ddd;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star.half-filled {
+  background: linear-gradient(90deg, #ffc107 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffc107;
+}
+
+@media (max-width: 480px) {
+  .star {
+    font-size: 1rem;
+  }
+} 
