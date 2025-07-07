@@ -15,6 +15,15 @@ const ProductCard = ({ product }) => {
     }).format(Math.round(price));
   };
 
+  const getColorDisplayName = (color) => {
+    const colorDisplayMap = {
+      yellow: 'Yellow Gold',
+      rose: 'Rose Gold', 
+      white: 'White Gold'
+    };
+    return colorDisplayMap[color] || color;
+  };
+
   return (
     <div className="product-card">
       <div className="product-image-container">
@@ -36,21 +45,23 @@ const ProductCard = ({ product }) => {
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>
         
-        <div className="product-rating">
-          <StarRating rating={parseFloat(product.starRating)} />
-          <span className="rating-text">({product.starRating})</span>
-        </div>
-        
         <div className="product-price">
           {formatPrice(product.price)}
         </div>
+
+        <div className="color-section">
+          <div className="selected-color-label">
+            {getColorDisplayName(selectedColor)}
+          </div>
+        </div>
         
-        <div className="product-details">
-          <span className="product-weight">{product.weight}g</span>
+        <div className="product-rating">
+          <StarRating rating={parseFloat(product.starRating)} />
+          <span className="rating-value">{product.starRating}</span>
         </div>
       </div>
     </div>
   );
-};
-
-export default ProductCard; 
+  };
+  
+  export default ProductCard; 

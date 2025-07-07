@@ -48,8 +48,12 @@ function App() {
     <div className="App">
       <div className="container">
         <header className="app-header">
-          <h1>Engagement Rings</h1>
-          <p>Discover our beautiful collection of engagement rings</p>
+          <h1>Product List</h1>
+          <div className="header-divider">
+            <div className="divider-line"></div>
+            <span className="header-metadata">{products.length} products available</span>
+            <div className="divider-line"></div>
+          </div>
         </header>
         <ProductGrid products={products} />
       </div>
