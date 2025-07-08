@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Hardcoded gold price 
-const GOLD_PRICE_PER_GRAM = 65; // $65 per gram
+const GOLD_PRICE_PER_GRAM = 65; 
 
 // Load products from JSON file
 const loadProducts = () => {
