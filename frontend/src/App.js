@@ -11,7 +11,9 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('/api/products');
+        // Use REACT_APP_API_URL if set, otherwise fallback to local dev
+        const apiBase = process.env.REACT_APP_API_URL || '';
+        const response = await axios.get(`${apiBase}/api/products`);
         setProducts(response.data);
         setLoading(false);
       } catch (err) {
